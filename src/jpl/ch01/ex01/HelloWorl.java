@@ -1,3 +1,4 @@
+// Copyright (C) 2016
 package ch01.ex01;
 
 class HelloWorld {
