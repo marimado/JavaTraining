@@ -1,4 +1,4 @@
-package jp.ch01.ex02;
+package jpl.ch01.ex02;
 
 /**
  *
