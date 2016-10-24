@@ -1,10 +1,12 @@
+/*
+ * Copyright (C) 2016 Mariko Madono. All rights reserved.
+ */
 package jpl.ch01.ex02;
-
 /**
  *
  * @author mariko.madono
  */
-class HelloWorld {
+class ErrorHelloWorld {
     //mainメソッドをprivateにして実行すると、mainメソッドがないというエラーが発生する。
     //staticをはずして実行すると、mainメソッドがないというエラーが発生する。
     //voidをはずすと、コンパイルができない。
