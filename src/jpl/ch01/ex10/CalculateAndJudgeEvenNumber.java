@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2016 Mariko Madono. All rights reserved.
  */
-package jpl.ch01.ex10;
+package ch01.ex10;
 
 /**
  *
@@ -9,23 +9,25 @@ package jpl.ch01.ex10;
  */
 public class CalculateAndJudgeEvenNumber {
     private int arrayLength;
-    public void setArrayLength(int i){
-        arrayLength = i;
-    }
-    public final int[] NUMBER = new int[arrayLength];
-    public final boolean[] BOOL = new boolean[arrayLength];
-  
-    public void storeData(int lo, int hi){
-        for(int i = 0; i < NUMBER.length; i++){
-                NUMBER[i] = hi;
-                if(hi % 2 ==0)
-                    BOOL[i] = true;
-                else
-                    BOOL[i] = false;
+    public int[] storeData(int lo, int hi, int arrayLength){
+        this.arrayLength = arrayLength;
+        int[] fiboSeq = new int[this.arrayLength];
+        fiboSeq[0] = lo;
+        for(int i = 1; i < fiboSeq.length; i++){
+                fiboSeq[i] = hi;
                 hi = lo + hi;
                 lo = hi -lo;
                 }
-    }    
+        return fiboSeq;
+    }
+    public boolean[] judgeEven(int[] fibo, int arrayLength){
+        boolean[] judgeEven = new boolean[this.arrayLength];
+        for(int i = 0; i < fibo.length; i++){
+            if(fibo[i] % 2 == 0)
+                    judgeEven[i] = true;
+                else
+                    judgeEven[i] = false;
+        }
+        return judgeEven;
+    }
 }
-/*
-*/
