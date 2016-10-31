@@ -23,7 +23,6 @@ public class CalculateAndJudgeEvenNumberTest {
         int hi = 1;
         int lo = 1;
         int[] intExpected = new int[]{1,1,2,3,5,8,13,21,34};
-        //int[] actual = new int[MAX_INDEX];
         CalculateAndJudgeEvenNumber cal = new CalculateAndJudgeEvenNumber();
         boolean[] boolExpected = new boolean[]{false,false,true,false,false,true,false,false,true};
         

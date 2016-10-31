@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Copyright (C) 2016 Mariko Madono. All rights reserved.
  */
 package ch01.ex12;
 
@@ -10,7 +8,36 @@ package ch01.ex12;
  * @author mariko.madono
  */
 public class FiboArray {
+    static final int MAX_INDEX = 9;
     
+    public static void main(String[] args){
+    //Stringオブジェクトの宣言
+    //Stringオブジェクトを格納する配列の宣言
+    String fibo;
+    String[] fiboSeq = new String[MAX_INDEX];
+    //フィボナッチ数列の生成
+        int lo = 1;
+        int hi = 1;
+        int n = 1;
+        String mark;
+        fibo = (n +":" + lo);
+        fiboSeq[0] = fibo;
+         for (int i = 1; i < MAX_INDEX; i++){
+            if(hi% 2 == 0)
+                mark = "*";
+            else
+                mark = "";
+            n++;
+            fibo = (n + ":" + hi + mark);
+            fiboSeq[i] = fibo;
+            
+            hi = lo + hi;
+            lo = hi - lo;
+        }        //格納したStringオブジェクトを表示
+         for(int i = 0; i <MAX_INDEX; i++){
+            System.out.println(fiboSeq[i]);    
+        }
+    }
 }
 /*
 問題：ImprovedFibonacciを修正してprintlnで文字列を直接表示するのではなく、
@@ -21,8 +48,8 @@ static final int MAX_INDEX = 9;
         int lo = 1;
         int hi = 1;
         String mark;
-         Ssytem.out.println("1:" + lo);
-         for (int i = 0; i <=MAX_INDEX; i++){
+         System.out.println("1:" + lo);
+         for (int i = 2; i <=MAX_INDEX; i++){
              if(hi% 2 == 0)
                  mark = "*";
              else
