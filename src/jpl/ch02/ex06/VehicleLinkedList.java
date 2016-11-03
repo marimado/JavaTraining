@@ -6,28 +6,41 @@
 package ch02.ex06;
 
 import ch02.ex05.Vehicle;
-import java.util.LinkedList;
+import java.util.ArrayList;
+
 
 
 /**
  *
  * @author mariko.madono
  */
+//Vehicleオブジェクトを作る
+//VehicleオブジェクトをLinkedListに格納する
+//nextListIDを格納する
+//
 public class VehicleLinkedList {
-    public Object obj;
-    public static int nextList;
+    public Object objField;
+    public int nextListID = 0;
+    
     public static void main(String[] args){
-       LinkedList vehicleList = new LinkedList();
+        VehicleLinkedList vehicleList = new VehicleLinkedList();
         Vehicle carVolvo940 = new Vehicle();
         Vehicle truckVolvoFl = new Vehicle();
-        vehicleList.add(carVolvo940);
-        vehicleList.add(truckVolvoFl);
+        ArrayList<VehicleLinkedList> list = new ArrayList();
 
-        for (int i = 0 ; i < vehicleList.size() ; i++){
-            Object vehicle = vehicleList.get(i);
-            System.out.println(vehicle);
-            
-    }
+        vehicleList.objField = carVolvo940;
+        vehicleList.nextListID = 1;
+        list.add(vehicleList);
+
+        vehicleList.objField = truckVolvoFl;
+        vehicleList.nextListID = 2;
+        list.add(vehicleList);
+        
+        for (int i = 0; i < list.size(); i++){
+            System.out.println(list.get(i).objField);
+            System.out.println(list.get(i).nextListID);
+            //同じオブジェクトが2つ入っている...
+        }
     }
 }
 /*
@@ -35,4 +48,14 @@ public class VehicleLinkedList {
 Vehicle型のオブジェクトを数個作成して、リストの連続したノードに入れなさい。
 
 疑問点：オブジェクトを出力してでてきた値は何か？
+
+リストの連続したノードにいれるとはどういうこと？リストに格納することとは違うの？
+Nodeで追加するの？
+Nodeはどのパッケージをimportすれば良いのか？
+org.w3c.dom.Nodeをimportすると、Nodeは抽象クラスなのでNewできない。
+Newする場合は、Nodeオブジェクトのフィールドやメソッドを実装するの？      
+
+mainメソッドから、Staticではないメソッドは呼べない。
+Staticではないフィールドは呼べない。
+でも、Staticにしてしまうと
 */

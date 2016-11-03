@@ -14,6 +14,7 @@ public class Vehicle {
     public double angleOfDirection;
     public String owner;
     public static int nextVehicleId;
+    
     /*
     以下の観点で検討して、オブジェクトが生成されたときに設定できないのでfinalにしない。
         ・そのフィールドは、オブジェクトの不変な属性を表しているか。
