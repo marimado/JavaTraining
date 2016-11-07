@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2016 Mariko Madono. All rights reserved.
  */
-package ch01.ex12;
+package jpl.ch01.ex12;
 
 /**
  *

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ch01.ex14;
+package jpl.ch01.ex14;
 
 /**
  *
