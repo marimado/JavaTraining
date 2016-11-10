@@ -26,10 +26,11 @@ public class Vehicle {
         return angleOfDirection;
     }
     //2つの定数のどちらかを引数にするやり方がわからない。
+    /*
     public boolean turn(){
         return (angleOfDirection == angle);
     }
-    
+    */
     public long getSpeed(){
         return speed;
     }
@@ -57,12 +58,12 @@ public class Vehicle {
     }
     
     public static void main(String[] args){
-        Vehicle carVolvo940 = new Vehicle("Assar Gabrielsson");    
+        Vehicle carVolvo940 = new Vehicle(args[0]);    
         carVolvo940.angleOfDirection = 90;
         carVolvo940.vehicleType = "car";
        System.out.println(toString(carVolvo940));
 
-        Vehicle truckVolvoFl = new Vehicle("Erik Gustav Larson");
+        Vehicle truckVolvoFl = new Vehicle(args[1]);
         truckVolvoFl.angleOfDirection = 45;
         truckVolvoFl.vehicleType = "truck";
         System.out.println(toString(truckVolvoFl));
@@ -95,4 +96,6 @@ public class Vehicle {
 /*
 Vehicle.mainを変更して、コマンドラインで指定された名前を所有者として持つ車を作成し、
 表示するようにしなさい。
+"Assar Gabrielsson"
+"Erik Gustav Larson"
 */

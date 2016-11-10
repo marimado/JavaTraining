@@ -18,14 +18,15 @@ public class Vehicle {
     private String vehicleType;
     private final long TURN_LEFT = 90;
     private final long TURN_RIGHT = 90;
+    private enum Turn{TURN_LEFT, TURN_RIGHT};
     
     public long turn(long angle){
         angleOfDirection = angle;
         return angleOfDirection;
     }
-    //2つの定数のどちらかを引数にするやり方がわからない。
-    public boolean turn(){
-        return (angleOfDirection == angle);
+    public long turn(Turn turn){
+        //angleOfDirection =(long)turn;
+        return angleOfDirection;
     }
     
     public long getSpeed(){

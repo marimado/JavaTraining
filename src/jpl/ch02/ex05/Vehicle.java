@@ -37,6 +37,9 @@ public class Vehicle {
         System.out.println("車種ID　：" + truckVolvoFl.vehicleId);
         System.out.println("所有者　：" + truckVolvoFl.owner);
     }
+    public String toString(){
+        return "madono";
+    }
 }
 /*
 問題：Vehicleクラスにmainメソッドを書いて、

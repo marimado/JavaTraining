@@ -16,6 +16,9 @@ public class FirstBaseWalkman {
     public Object listenMusic(int terminal, Object tape){
         music = "音楽";
         return music;   
+    //ウォークマンがするのは、playとstop。
+    //その2つのメソッドが必要。
+    //端子を差すというメソッドがある。
     }
 }
 /*

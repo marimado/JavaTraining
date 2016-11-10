@@ -6,9 +6,6 @@
 package jpl.ch02.ex06;
 
 import jpl.ch02.ex05.Vehicle;
-import java.util.ArrayList;
-
-
 
 /**
  *
@@ -18,28 +15,25 @@ import java.util.ArrayList;
 //VehicleオブジェクトをLinkedListに格納する
 //nextListIDを格納する
 //
-public class VehicleLinkedList {
-    public Object objField;
-    public int nextListID = 0;
+public class LinkedList {
+    public Object value;
+    public LinkedList next;
     
     public static void main(String[] args){
-        VehicleLinkedList vehicleList = new VehicleLinkedList();
+        LinkedList list1 = new LinkedList();
         Vehicle carVolvo940 = new Vehicle();
         Vehicle truckVolvoFl = new Vehicle();
-        ArrayList<VehicleLinkedList> list = new ArrayList();
+        LinkedList list2 = new LinkedList();
 
-        vehicleList.objField = carVolvo940;
-        vehicleList.nextListID = 1;
-        list.add(vehicleList);
+        list1.value = carVolvo940;
+        list1.next = null;
 
-        vehicleList.objField = truckVolvoFl;
-        vehicleList.nextListID = 2;
-        list.add(vehicleList);
+        list2.value = truckVolvoFl;
+        list2.next = null;
+        list1.next = list2;
         
-        for (int i = 0; i < list.size(); i++){
-            System.out.println(list.get(i).objField);
-            System.out.println(list.get(i).nextListID);
-            //同じオブジェクトが2つ入っている...
+        for (LinkedList list = list1; list != null; list = list.next) {
+            System.out.println(list.value);
         }
     }
 }

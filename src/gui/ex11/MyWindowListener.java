@@ -16,7 +16,7 @@ public class MyWindowListener implements WindowListener{
     @Override
     //ウィンドウがオープンされた時の処理
     public void windowOpened(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        //throw new UnsupportedOperationException("Not supported yet."); 
     }
 
     @Override
@@ -28,31 +28,31 @@ public class MyWindowListener implements WindowListener{
     @Override
     //ウィンドウがクローズした後の処理
     public void windowClosed(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        //throw new UnsupportedOperationException("Not supported yet."); 
     }
 
     @Override
     //ウィンドウが最小化された時の処理
     public void windowIconified(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        //throw new UnsupportedOperationException("Not supported yet."); 
     }
 
     @Override
     //ウィンドウが最小化から元に戻された時の処理
     public void windowDeiconified(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        //throw new UnsupportedOperationException("Not supported yet."); 
     }
 
     @Override
     //ウィンドウがアクティブになった時の処理
     public void windowActivated(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        //throw new UnsupportedOperationException("Not supported yet."); 
     }
 
     @Override
     //ウィンドウがアクティブでなくなった時の処理
     public void windowDeactivated(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        //throw new UnsupportedOperationException("Not supported yet."); 
     }
     
 }
