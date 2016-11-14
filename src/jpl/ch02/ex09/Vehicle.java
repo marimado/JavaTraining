@@ -16,6 +16,14 @@ public class Vehicle {
     public static int nextVehicleId = 000;
     public int vehicleId;
     
+    Vehicle(){
+        vehicleId = nextVehicleId+ 1;
+        nextVehicleId = vehicleId;
+    }
+    Vehicle(String vehicleOwner){
+        this();
+        owner = vehicleOwner;
+    }
     public static void main(String[] args){
         Vehicle carVolvo940 = new Vehicle("Assar Gabrielsson");    
         carVolvo940.angleOfDirection = 90;
@@ -34,20 +42,17 @@ public class Vehicle {
         System.out.println("所有者　：" + truckVolvoFl.owner);
         
         int maxNumID = maxNumID();
-        maxNumID = maxNumID - 1;
         System.out.println("識別番号の最大値：" + maxNumID);
-    }
-    Vehicle(){
-        vehicleId = Vehicle.nextVehicleId++;
-    }
-    Vehicle(String vehicleOwner){
-        this();
-        owner = vehicleOwner;
     }
     public static int maxNumID(){
         // 順番に識別番号を割り振っているので、最後のvehicleIdをゲットしたい。
         return nextVehicleId;
     }
+
+    public String toString(){
+        String vehicleInfo = "車種ID" + vehicleId + "所有者" + owner;
+        return vehicleInfo;
+    }    
 }
 /*
 問題：Vehicleクラスに今まで使われた識別番号の最大値を返すstaticメソッドを追加しなさい。

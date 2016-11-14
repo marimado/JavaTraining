@@ -5,58 +5,68 @@
  */
 package jpl.ch02.ex16;
 
-import jpl.ch02.ex05.Vehicle;
-import java.util.ArrayList;
+import jpl.ch02.ex07.Vehicle;
 
 /**
  *
  * @author mariko.madono
  */
 public class LinkedList {
-    private Object objField;
-    private int nextListID;
-    private int currentListID = 0;
-    
-    public Object setObject(Object objField){
-        this.objField = objField;
-        return objField;
-    }
-    public int setNextListID(){
-        return nextListID;
-    }
-    public int getListLength(ArrayList list){
-        int length = list.size();
-        return length;
-    }
-//次の要素IDをコンストラクタで設定させる。
-    LinkedList(){
-         nextListID = currentListID++;
-    }
-    
-    public static void main(String[] args){
-        LinkedList vehicleList = new LinkedList();
-        Vehicle carVolvo940 = new Vehicle();
-        Vehicle truckVolvoFl = new Vehicle();
-        ArrayList<LinkedList> list = new ArrayList();
+    private Object value;
+    private LinkedList next;
 
-        vehicleList.objField = carVolvo940;
-        list.add(vehicleList);
+//次の要素IDをコンストラクタで設定させる。    
 
-        vehicleList.objField = truckVolvoFl;
-        list.add(vehicleList);
+    LinkedList(Object vehicle, LinkedList list){
+        value = vehicle;
+        next = list;
+    }
         
-        for (int i = 0; i < list.size(); i++){
-            System.out.println(list.get(i).objField);
-            System.out.println(list.get(i).nextListID);
-            //同じオブジェクトが2つ入っている...
+            //アクセッサーメソッド
+    public Object setValue(Object v){
+        value = v;
+        return value;
+    }
+
+    public LinkedList setList(LinkedList l){
+        next = l;
+        return next;
+    }
+    //リスト内の要素の数を返すメソッド
+    public static int countList(LinkedList list){
+        int length = 1;
+        while (list.next !=null){
+            int i = 1;
+            list = list.next;
+            i++;
+            length = i;
         }
-        public static String ToString(ArrayList list){
-                for (int i = 0; i < list.size(); i++){
-                 //ArrayListの中のオブジェクトのフィールドへのアクセス方法が分からない。。   
-                }
+        return length;            
+    }
+       public static void main(String[] args) {
+            Vehicle carVolvo940 = new Vehicle("Assar Gabrielsson");
+            carVolvo940.angleOfDirection = 90;
+            LinkedList list1 = new LinkedList(carVolvo940, null);
+            
+            Vehicle truckVolvoFl = new Vehicle("Erik Gustav Larson");
+            truckVolvoFl.angleOfDirection = 45;
+            LinkedList list2 = new LinkedList(truckVolvoFl, null);
+
+            list1.next = list2;
+
+            for (LinkedList list = list1; list != null; list = list.next) {
+                System.out.println(toString(list));
+            }
+            String length = String.valueOf(countList(list1));
+            System.out.println("リストの要素は" + (String)length);
         }
+        public static String toString(LinkedList list){
+            String separator = System.getProperty("line.separator");
+            String linkedListData = "オブジェクト" + list.value + separator;
+            linkedListData = linkedListData + "次のオブジェクト" + list.next + separator;
+            return linkedListData;
     }    
 }
 /*
-問題：リスト内の要素の数を返すメソッドをLinkedList二対かしなさい。
+問題：リスト内の要素の数を返すメソッドをLinkedListに追加しなさい。
 */

@@ -20,7 +20,7 @@ public class Vehicle {
         Vehicle carVolvo940 = new Vehicle();    
         carVolvo940.angleOfDirection = 90;
         carVolvo940.owner = "Assar Gabrielsson";
-        carVolvo940.vehicleId = Vehicle.nextVehicleId++;
+        carVolvo940.vehicleId = nextVehicleId + 1;
         
         System.out.println("Vehicle名　： car");
         System.out.println("進行方向　：" + carVolvo940.angleOfDirection + "度");
@@ -30,7 +30,7 @@ public class Vehicle {
         Vehicle truckVolvoFl = new Vehicle();
         truckVolvoFl.angleOfDirection = 45;
         truckVolvoFl.owner = "Erik Gustav Larson";
-        truckVolvoFl.vehicleId = Vehicle.nextVehicleId++;
+        truckVolvoFl.vehicleId = nextVehicleId + 2;
         
         System.out.println("Vehicle名　： truck");
         System.out.println("進行方向　：" + truckVolvoFl.angleOfDirection + "度");
@@ -38,7 +38,8 @@ public class Vehicle {
         System.out.println("所有者　：" + truckVolvoFl.owner);
     }
     public String toString(){
-        return "madono";
+        String vehicleInfo = "車種ID" + vehicleId + "所有者" + owner;
+        return vehicleInfo;
     }
 }
 /*

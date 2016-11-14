@@ -19,7 +19,16 @@ public class Vehicle {
     private final long TURN_LEFT = 90;
     private final long TURN_RIGHT = 90;
     private enum Turn{TURN_LEFT, TURN_RIGHT};
-    
+
+Vehicle(){
+        vehicleId = nextVehicleId+ 1;
+        nextVehicleId = vehicleId;
+    }
+Vehicle(String vehicleOwner){
+        this();
+        owner = vehicleOwner;
+    }
+
     public long turn(long angle){
         angleOfDirection = angle;
         return angleOfDirection;
@@ -67,26 +76,19 @@ public class Vehicle {
         System.out.println(toString(truckVolvoFl));
         
         int maxNumID = maxNumID();
-        maxNumID = maxNumID - 1;
         System.out.println("識別番号の最大値：" + maxNumID);
     }
-    Vehicle(){
-        vehicleId = Vehicle.nextVehicleId++;
-    }
-    Vehicle(String vehicleOwner){
-        this();
-        owner = vehicleOwner;
-    }
+
     public static int maxNumID(){
         // 順番に識別番号を割り振っているので、最後のvehicleIdをゲットしたい。
         return nextVehicleId;
     }
     public static String toString(Vehicle vehicle){
-        //改行いれるように改善したい。
-        String vehicleData = "Vehicle種別　：" + vehicle.vehicleType;
-        vehicleData = vehicleData + "進行方向　：" + vehicle.angleOfDirection + "度";
-        vehicleData = vehicleData + "車種ID　：" + vehicle.vehicleId;
-        vehicleData = vehicleData + "所有者　：" + vehicle.owner;
+        String sep = System.getProperty("line.separator");
+        String vehicleData = "Vehicle種別　：" + vehicle.vehicleType + sep;
+        vehicleData = vehicleData + "進行方向　：" + vehicle.angleOfDirection + "度" + sep;
+        vehicleData = vehicleData + "車種ID　：" + vehicle.vehicleId + sep;
+        vehicleData = vehicleData + "所有者　：" + vehicle.owner + sep;
       
         return vehicleData;
     }    

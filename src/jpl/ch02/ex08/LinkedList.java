@@ -5,45 +5,38 @@
  */
 package jpl.ch02.ex08;
 
-import jpl.ch02.ex05.Vehicle;
-import java.util.ArrayList;
+import jpl.ch02.ex07.Vehicle;
 
 /**
  *
  * @author mariko.madono
  */
 public class LinkedList {
-    public Object objField;
-    public int nextListID;
-    public int currentListID = 0;
-    
-//次の要素IDをコンストラクタで設定させる。
-    LinkedList(){
-         nextListID = currentListID++;
-    }
-    
-    public static void main(String[] args){
-        LinkedList vehicleList = new LinkedList();
-        Vehicle carVolvo940 = new Vehicle();
-        Vehicle truckVolvoFl = new Vehicle();
-        ArrayList<LinkedList> list = new ArrayList();
+        public Object value;
+        public LinkedList next;
 
-        vehicleList.objField = carVolvo940;
-        list.add(vehicleList);
+//次の要素IDをコンストラクタで設定させる。    
 
-        vehicleList.objField = truckVolvoFl;
-        list.add(vehicleList);
-        
-        for (int i = 0; i < list.size(); i++){
-            System.out.println(list.get(i).objField);
-            System.out.println(list.get(i).nextListID);
-            //同じオブジェクトが2つ入っている...
+        LinkedList(Object vehicle, LinkedList list){
+            value = vehicle;
+            next = list;
         }
-    }
+
+        public static void main(String[] args) {
+            Vehicle carVolvo940 = new Vehicle("Assar Gabrielsson");
+            LinkedList list1 = new LinkedList(carVolvo940, null);
+            
+            Vehicle truckVolvoFl = new Vehicle("Erik Gustav Larson");
+            LinkedList list2 = new LinkedList(truckVolvoFl, null);
+
+            list1.next = list2;
+
+            for (LinkedList list = list1; list != null; list = list.next) {
+                System.out.println(list.value);
+            }
+        }
 }
-    
-    
-    
+
 /*
 問題：LinkedListにはどのようなコンストラクタを追加すべきですか。
-*/
+ */

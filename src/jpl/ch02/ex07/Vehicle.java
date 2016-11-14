@@ -16,6 +16,16 @@ public class Vehicle {
     public static int nextVehicleId = 000;
     public int vehicleId;
     
+    public Vehicle(){
+        vehicleId = nextVehicleId+ 1;
+        nextVehicleId = vehicleId;
+    }
+    
+    public Vehicle(String vehicleOwner){
+        this();
+        owner = vehicleOwner;
+    }
+    
     public static void main(String[] args){
         Vehicle carVolvo940 = new Vehicle("Assar Gabrielsson");    
         carVolvo940.angleOfDirection = 90;
@@ -33,12 +43,9 @@ public class Vehicle {
         System.out.println("車種ID　：" + truckVolvoFl.vehicleId);
         System.out.println("所有者　：" + truckVolvoFl.owner);
     }
-    Vehicle(){
-        vehicleId = Vehicle.nextVehicleId++;
-    }
-    Vehicle(String vehicleOwner){
-        this();
-        owner = vehicleOwner;
+    public String toString(){
+        String vehicleInfo = "車種ID" + vehicleId + "所有者" + owner;
+        return vehicleInfo;
     }
 }
 /*
