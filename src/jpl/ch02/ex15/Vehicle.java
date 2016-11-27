@@ -17,12 +17,12 @@ public class Vehicle {
     private int vehicleId;
     private String vehicleType;
     
-    Vehicle(){
+    public Vehicle(){
         vehicleId = nextVehicleId+ 1;
         nextVehicleId = vehicleId;
     }
     
-    Vehicle(String vehicleOwner){
+    public Vehicle(String vehicleOwner){
         this();
         owner = vehicleOwner;
     }
@@ -38,19 +38,23 @@ public class Vehicle {
         speed = 0;
         return speed;
     }
-    public long getAngleOfDirection(long x, long y){
+    public long getAngleOfDirection(){
         return angleOfDirection;
     }
-    public String getOwner(String name){
-        owner = name;
+    public void setAngleOfDirection(long l){
+        angleOfDirection = l;
+    }
+    public String getOwner(){
         return owner;
     }
     public int getVehicleId(){
         return vehicleId;
     }
-    public String getVehicleType(String type){
-        vehicleType = type;
+    public String getVehicleType(){
         return vehicleType;
+    }
+    public void setVehicleType(String type){
+        vehicleType = type;
     }
     
     public static void main(String[] args){

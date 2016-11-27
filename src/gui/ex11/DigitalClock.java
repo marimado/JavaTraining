@@ -8,6 +8,7 @@ package gui.ex11;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -63,7 +64,12 @@ public class DigitalClock extends Frame {
 
     @Override
     public void paint(Graphics g) {
-        g.drawString(new Date().toString(), 70, 70);
-        g.dispose();
+        Graphics2D g2 = (Graphics2D)g;
+        g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, 
+                        RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+        Font font = new Font("ＭＳ 明朝", Font.BOLD|Font.ITALIC, 32);
+        g2.setFont(font);
+        g2.drawString(new Date().toString(), 70, 70);
+        g2.dispose();
     }
 }

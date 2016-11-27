@@ -5,7 +5,6 @@
  */
 package jpl.ch01.ex15;
 
-import ch01.ex15.SimpleLookup;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

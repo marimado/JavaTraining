@@ -3,7 +3,6 @@
  */
 package jpl.ch01.ex10;
 
-import ch01.ex10.CalculateAndJudgeEvenNumber;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.is;

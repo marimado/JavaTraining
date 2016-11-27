@@ -18,9 +18,17 @@ public class Vehicle {
     private static int nextVehicleId = 000;
     private int vehicleId;
     private String vehicleType;
-    private final long TURN_LEFT = 90;
-    private final long TURN_RIGHT = 90;
-    
+    //private final long TURN_LEFT = 90;
+    //private final long TURN_RIGHT = 90;
+
+    Vehicle(){
+            vehicleId = nextVehicleId+ 1;
+            nextVehicleId = vehicleId;
+        }
+    Vehicle(String vehicleOwner){
+            this();
+            owner = vehicleOwner;
+        }
     public long turn(long angle){
         angleOfDirection = angle;
         return angleOfDirection;
@@ -58,26 +66,18 @@ public class Vehicle {
     }
     
     public static void main(String[] args){
-        Vehicle carVolvo940 = new Vehicle(args[0]);    
+        Vehicle carVolvo940 = new Vehicle(args[0]);  
         carVolvo940.angleOfDirection = 90;
         carVolvo940.vehicleType = "car";
        System.out.println(toString(carVolvo940));
-
+/*
         Vehicle truckVolvoFl = new Vehicle(args[1]);
         truckVolvoFl.angleOfDirection = 45;
         truckVolvoFl.vehicleType = "truck";
         System.out.println(toString(truckVolvoFl));
-        
+*/        
         int maxNumID = maxNumID();
-        maxNumID = maxNumID - 1;
         System.out.println("識別番号の最大値：" + maxNumID);
-    }
-    Vehicle(){
-        vehicleId = Vehicle.nextVehicleId++;
-    }
-    Vehicle(String vehicleOwner){
-        this();
-        owner = vehicleOwner;
     }
     public static int maxNumID(){
         // 順番に識別番号を割り振っているので、最後のvehicleIdをゲットしたい。
