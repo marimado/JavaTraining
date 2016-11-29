@@ -10,7 +10,7 @@ package jpl.ch02.ex18;
  * @author mariko.madono
  */
 
-//コマンドラインからの引数の受け渡し方法が分かりませんでした。
+
 public class Vehicle {
     private long speed;
     private long angleOfDirection;
@@ -70,12 +70,12 @@ public class Vehicle {
         carVolvo940.angleOfDirection = 90;
         carVolvo940.vehicleType = "car";
        System.out.println(toString(carVolvo940));
-/*
+
         Vehicle truckVolvoFl = new Vehicle(args[1]);
         truckVolvoFl.angleOfDirection = 45;
         truckVolvoFl.vehicleType = "truck";
         System.out.println(toString(truckVolvoFl));
-*/        
+        
         int maxNumID = maxNumID();
         System.out.println("識別番号の最大値：" + maxNumID);
     }
@@ -84,11 +84,11 @@ public class Vehicle {
         return nextVehicleId;
     }
     public static String toString(Vehicle vehicle){
-        //改行いれるように改善したい。
-        String vehicleData = "Vehicle種別　：" + vehicle.vehicleType;
-        vehicleData = vehicleData + "進行方向　：" + vehicle.angleOfDirection + "度";
-        vehicleData = vehicleData + "車種ID　：" + vehicle.vehicleId;
-        vehicleData = vehicleData + "所有者　：" + vehicle.owner;
+        String sep = System.getProperty("line.separator");
+        String vehicleData = "Vehicle種別　：" + vehicle.vehicleType +sep;
+        vehicleData = vehicleData + "進行方向　：" + vehicle.angleOfDirection + "度" +sep;
+        vehicleData = vehicleData + "車種ID　：" + vehicle.vehicleId +sep;
+        vehicleData = vehicleData + "所有者　：" + vehicle.owner +sep;
       
         return vehicleData;
     }    

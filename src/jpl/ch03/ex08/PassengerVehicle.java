@@ -3,17 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jpl.ch03.ex01;
-import jpl.ch02.ex17.Vehicle;
+package jpl.ch03.ex08;
 /**
  *
  * @author mariko.madono
-問題：第2章の練習問題のVehicleクラスを拡張してPassengerVehicleクラスを作成し、
-車が持っている座席数と現在座っている人数を帰す機能を追加しなさい。
-PassengerVehicleに新たなmainメソッドを定義して、PassenngerVehicleオブジェクトを数個生成して表示するようにしなさい。
+問題：VehicleとPassengerVehicleをCloneable型にしなさい。
+* 複製に関して、4つの選択肢のどれを選択すべきでしょうか。
+* Object.cloneによる単純なコピーは、されらのクラスのcloneメソッドとしては正しいでしょうか。
  */
 
-public class PassengerVehicle extends Vehicle {
+public class PassengerVehicle extends Vehicle implements Cloneable{
     private int seatNum;
     private int passengerNum;
     
@@ -56,5 +55,24 @@ public class PassengerVehicle extends Vehicle {
         vehicleData = vehicleData + "現在の乗員　：" + pVehicle.passengerNum +  "人" + sep;
         
         return vehicleData;
+    }
+    /*
+    同じ車種の車を同一オーナーが複数所有することを想定してCloneメソッドを定義する。
+    Cloneしてはいけないフィールド
+    ・車種ID
+    ・angleOfDirection（進行方向）
+    ・passengerNum(現在座っている人）
+    ・vehicleId（車種ID）
+    */
+    @Override
+    public PassengerVehicle clone() throws CloneNotSupportedException{
+        try {
+            PassengerVehicle clonePV = (PassengerVehicle)super.clone();
+            clonePV.seatNum = seatNum;
+            clonePV.passengerNum = 5;
+            return clonePV;
+        } catch (CloneNotSupportedException ex) {
+            throw new InternalError(ex.toString());
+        }
     }
 }
