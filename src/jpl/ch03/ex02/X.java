@@ -9,7 +9,8 @@ package jpl.ch03.ex02;
  *
  * @author mariko.madono
  */
-public class X {
+abstract class X {
+    {print("Xのフィールド初期化前");}
     protected int xMask = 0x00ff;
     protected int fullMask;
     {print("Xのフィールドが初期化");}
@@ -21,7 +22,6 @@ public class X {
     public int mask(int orig){
         return(orig & fullMask); //origとfullMaskのビットごとのAND演算
     }
-    public void print(String msg){
-    }
+    abstract void print(String msg);
     
 }

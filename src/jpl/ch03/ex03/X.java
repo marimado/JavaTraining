@@ -17,8 +17,8 @@ public class X {
         fullMask = xMask;
         print("Xのコンストラクタが実行");
     }
-    public X(int mask){
-        fullMask = mask;
+    protected X(int mask){//外部から呼ばれないようにprotectedにする
+        fullMask = mask | xMask; //自分の値と比較して輪達す
         print("Xのコンストラクタが実行");
     }
     private int mask(int orig){ //他のクラスから触れられないメソッド

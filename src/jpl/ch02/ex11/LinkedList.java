@@ -40,6 +40,16 @@ public class LinkedList {
             String linkedListData = "オブジェクト" + list.value + separator;
             linkedListData = linkedListData + "次のオブジェクト" + list.next + separator;
             return linkedListData;
+            
+            /*
+            String desc = list.toString();
+            if(nextLink != null){
+            desc += "nextLink" + nextLink.toString();
+            }
+            return desc;
+            この実装だと、データが多いと、スタックオーバーフローが起きてしまう。
+            */
+                    
     }
 }
 /*

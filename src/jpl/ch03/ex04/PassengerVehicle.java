@@ -9,7 +9,7 @@ import jpl.ch02.ex17.Vehicle;
  *
  * @author mariko.madono
 問題：もしあるとしたら、VehicleとPassengerVehicleのどのメソッドをFinalにするのが適切ですか？
-* この実装だととくにないと思います。。。
+* getPassengerなどは不正な乗員数にしたくなければfinalとすべき。
  */
 
 public class PassengerVehicle extends Vehicle {
@@ -24,9 +24,8 @@ public class PassengerVehicle extends Vehicle {
         super(vehicleOwner);
         seatNum = seat;
     }
-    
-    public int getPassengerNum(int passenger){
-        passengerNum = passenger;
+    //passngerは不正な値を返さないようにFinalにしても良いはず
+    public final int getPassengerNum(){
         return passengerNum;
     }
     public static void main(String[] args){

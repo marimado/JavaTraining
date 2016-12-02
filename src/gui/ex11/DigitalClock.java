@@ -73,3 +73,10 @@ public class DigitalClock extends Frame {
         g2.dispose();
     }
 }
+
+/*
+次回の課題は、ちらつきをなくす。
+何かのメソッドで、全画面クリアしているところがあるのでそのメソッドをオーバーライドする。
+そのメソッドで、doublebufferingで全画面を裏で描画しておいて、
+それを表示させるようにする。
+*/

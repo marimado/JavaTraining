@@ -22,13 +22,16 @@ public class LinkedList {
             next = list;
         }
         //アクセッサーメソッド
-        public Object setValue(Object v){
+        public void setValue(Object v){
             value = v;
+        }
+        public void setList(LinkedList l){
+            next = l;
+        }
+        public Object getValue(){
             return value;
         }
-
-        public LinkedList setList(LinkedList l){
-            next = l;
+        public LinkedList getNext(){
             return next;
         }
         public static void main(String[] args) {

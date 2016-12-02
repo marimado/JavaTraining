@@ -17,6 +17,7 @@ package jpl.ch03.ex02;
 // Yのコンストラクタが呼び出される、Xのコンストラクタが呼び出される（コンストラクタの実行はできても呼び出しのところができていない）
 // Objectのコンストラクタが呼び出される
 public class Y extends X{
+    {print("Yのフィールドが初期化前");}
     protected int yMask = 0xff00;
     {print("Yのフィールドが初期化");}
     

@@ -21,7 +21,7 @@ public class Y extends X{
     
     public Y(){
         super(0xffff); //コンストラクタで拡張したクラスからマスクの値を設定
-        fullMask |= yMask;
+        //fullMask |= yMask;
         this.print("Yのコンストラクタが実行");
     }
     public static void main(String[] args){
