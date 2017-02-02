@@ -17,6 +17,7 @@ public class Battery implements EnergySource{
     }
     @Override
     public boolean isEmpty() {
+        //1行で表現する方法を要確認
         if(battery == 0){
             return true;
         }

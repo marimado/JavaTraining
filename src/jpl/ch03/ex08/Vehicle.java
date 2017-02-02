@@ -113,6 +113,7 @@ public class Vehicle implements Cloneable{
     @Override
     public Vehicle clone() throws CloneNotSupportedException{
         //vehicleIdやangleOfDirectionが同一になってしまうので、super.clone();は呼べない。
+        //newを呼ぶときは自分のサブクラスがない場合のみ。なので、Vehicleクラスをfinalにしないnewしてはいけない。
         Vehicle cloneV = new Vehicle(getOwner());
         cloneV.angleOfDirection = 180;
         cloneV.speed = 100;
